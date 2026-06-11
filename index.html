@@ -6,176 +6,179 @@
     <title>AgroInfo - Portal do Pequeno Produtor</title>
     <style>
         /* Estilos Globais e Cores */
-        :root {
-            --primary-color: #2e7d32; /* Verde Agro */
-            --secondary-color: #f57c00; /* Laranja Terra */
-            --background-color: #f4f6f4;
-            --text-color: #333;
-            --white: #ffffff;
-        }
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #f57c00;
+    --background-color: #f4f6f4;
+    --text-color: #333;
+    --white: #ffffff;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
 
-        /* Cabeçalho */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        header h1 {
-            font-size: 1.5rem;
-        }
+header h1 {
+    font-size: 1.5rem;
+}
 
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
-        }
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
-        /* Container Principal */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
 
-        .hero {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--secondary-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+/* Hero */
+.hero {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 
-        /* Seções/Cards */
-        .grid-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
+    /* sem arredondamento */
+    border-radius: 0;
+}
 
-        .card {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+/* Atalhos */
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
 
-        .card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 0.5rem;
-        }
+.menu-card {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
 
-        /* Widget de Clima */
-        .weather-search {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
+.menu-card:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
 
-        .weather-search input {
-            flex: 1;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+/* Grid */
+.grid-sections {
+    display: block;
+}
 
-        .weather-search button {
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+/* Card principal */
+.card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 
-        .weather-result {
-            background-color: #e8f5e9;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-        }
+    /* sem arredondamento */
+    border-radius: 0;
+}
 
-        /* Dicas de Cultivo (Abas/Acordes) */
-        .cultivo-item {
-            margin-bottom: 1rem;
-            background: #fafafa;
-            padding: 0.8rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--primary-color);
-        }
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
 
-        .cultivo-item h4 {
-            color: var(--primary-color);
-        }
+/* Dicas de Cultivo */
+.cultivo-item {
+    margin-bottom: 1rem;
+    background: #fafafa;
+    padding: 0.8rem;
+    border-left: 3px solid var(--primary-color);
 
-        /* Tabela de Preços */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 0.5rem;
-        }
+    /* sem arredondamento */
+    border-radius: 0;
+}
 
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+.cultivo-item h4 {
+    color: var(--primary-color);
+}
 
-        th {
-            background-color: #f5f5f5;
-            color: var(--primary-color);
-        }
+/* Inputs */
+.weather-search input,
+.weather-search button,
+.weather-result {
+    border-radius: 0;
+}
 
-        /* Lista de Contatos */
-        .contact-list {
-            list-style: none;
-        }
+/* Valores da empresa */
+.valores {
+    margin-top: 3rem;
+    background: white;
+    padding: 2rem;
+    border: 2px solid #ddd;
+}
 
-        .contact-list li {
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px dashed #eee;
-        }
+.valores h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
 
-        .contact-list strong {
-            color: #555;
-        }
+.valor-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
 
-        /* Rodapé */
-        footer {
-            background-color: #333;
-            color: var(--white);
-            text-align: center;
-            padding: 1rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
+.valor-item:last-child {
+    border-bottom: none;
+}
+
+.valor-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
     </style>
 </head>
 <body>
@@ -190,142 +193,54 @@
         </nav>
     </header>
 
-    <div class="container">
-        
-        <div class="hero">
-            <h2>Bem-vindo ao AgroInfo</h2>
-            <p>O portal de apoio rápido para o pequeno produtor rural. Informações essenciais para o seu dia a dia no campo.</p>
+    <div class="atalhos">
+
+    <a href="clima.html" target="_blank" class="menu-card">
+        🌦️ Previsão do Tempo
+    </a>
+
+    <a href="precos.html" target="_blank" class="menu-card">
+        💰 Preços Médios
+    </a>
+
+    <a href="contatos.html" target="_blank" class="menu-card">
+        📞 Contatos Úteis
+    </a>
+
+</div>
+
+<div class="grid-sections">
+
+    <section id="cultivo" class="card">
+        <h2>🌱 Dicas de Cultivo</h2>
+
+        <div class="cultivo-item">
+            <h4>🌽 Milho</h4>
+            <p>
+                <strong>Época:</strong> Outubro a Dezembro.<br>
+                <strong>Água:</strong> Moderada (fase de floração é crítica).<br>
+                <strong>Pragas comuns:</strong> Lagarta-do-cartucho.
+            </p>
         </div>
 
-        <div class="grid-sections">
-            
-            <section id="clima" class="card">
-                <h2>🌦️ Previsão do Tempo</h2>
-                <p style="margin-bottom: 10px; font-size: 0.9rem; color: #666;">Digite sua cidade para atualizar o clima em tempo real:</p>
-                <div class="weather-search">
-                    <input type="text" id="city-input" placeholder="Ex: Patos de Minas" value="Patos de Minas">
-                    <button onclick="buscarClima()">Buscar</button>
-                </div>
-                <div id="weather-info" class="weather-result">
-                    <h3 id="w-cidade">Carregando...</h3>
-                    <p><strong>Temperatura:</strong> <span id="w-temp">--</span>°C</p>
-                    <p><strong>Condição:</strong> <span id="w-condicao">--</span></p>
-                    <p><strong>Umidade do Ar:</strong> <span id="w-umidade">--</span>%</p>
-                </div>
-            </section>
-
-            <section id="cultivo" class="card">
-                <h2>🌱 Dicas de Cultivo</h2>
-                
-                <div class="cultivo-item">
-                    <h4>🌽 Milho</h4>
-                    <p><strong>Época:</strong> Outubro a Dezembro.<br><strong>Água:</strong> Moderada (fase de floração é crítica).<br><strong>Pragas comuns:</strong> Lagarta-do-cartucho.</p>
-                </div>
-
-                <div class="cultivo-item">
-                    <h4>🫘 Feijão</h4>
-                    <p><strong>Época:</strong> Ano todo (dependendo da região/irrigação).<br><strong>Água:</strong> Alta frequência, mas sem encharcar.<br><strong>Pragas comuns:</strong> Vaquinha, Mosca-branca.</p>
-                </div>
-
-                <div class="cultivo-item">
-                    <h4>🌱 Soja</h4>
-                    <p><strong>Época:</strong> Outubro e Novembro.<br><strong>Água:</strong> Alta necessidade na germinação e enchimento de grãos.<br><strong>Pragas comuns:</strong> Lagarta da soja, Percevejos.</p>
-                </div>
-            </section>
-
-            <section id="precos" class="card">
-                <h2>💰 Preços Médios</h2>
-                <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.5rem;">*Valores simulados para demonstração</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Produto</th>
-                            <th>Preço Médio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>🌽 Milho (Saca 60kg)</td>
-                            <td>R$ 65,00</td>
-                        </tr>
-                        <tr>
-                            <td>🫘 Feijão (Saca 60kg)</td>
-                            <td>R$ 210,00</td>
-                        </tr>
-                        <tr>
-                            <td>🌱 Soja (Saca 60kg)</td>
-                            <td>R$ 140,00</td>
-                        </tr>
-                        <tr>
-                            <td>🥦 Hortaliças (Caixa Média)</td>
-                            <td>R$ 45,00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section id="contatos" class="card">
-                <h2>📞 Contatos Úteis</h2>
-                <ul class="contact-list">
-                    <li>
-                        <strong>EMATER / Órgão de Extensão Rural</strong><br>
-                        Telefone: (31) 3349-8000<br>
-                        <small>Apoio técnico gratuito ao produtor</small>
-                    </li>
-                    <li>
-                        <strong>Secretaria de Agricultura Local</strong><br>
-                        Telefone: 0800-777-XXXX<br>
-                        <small>Informações sobre programas municipais</small>
-                    </li>
-                    <li>
-                        <strong>Sindicato dos Produtores Rurais</strong><br>
-                        Telefone: (34) 3822-XXXX<br>
-                        <small>Cursos, convênios e emissão de notas</small>
-                    </li>
-                </ul>
-            </section>
-
+        <div class="cultivo-item">
+            <h4>🫘 Feijão</h4>
+            <p>
+                <strong>Época:</strong> Ano todo (dependendo da região/irrigação).<br>
+                <strong>Água:</strong> Alta frequência, mas sem encharcar.<br>
+                <strong>Pragas comuns:</strong> Vaquinha, Mosca-branca.
+            </p>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 AgroInfo - Desenvolvido para fins acadêmicos.</p>
-    </footer>
+        <div class="cultivo-item">
+            <h4>🌱 Soja</h4>
+            <p>
+                <strong>Época:</strong> Outubro e Novembro.<br>
+                <strong>Água:</strong> Alta necessidade na germinação e enchimento de grãos.<br>
+                <strong>Pragas comuns:</strong> Lagarta da soja, Percevejos.
+            </p>
+        </div>
 
-    <script>
-        // Função para buscar o clima de forma dinâmica
-        async function buscarClima() {
-            const cidade = document.getElementById('city-input').value;
-            const apiKey = 'SUA_API_KEY_AQUI'; // Substitua pelo seu token gratuito do OpenWeatherMap
-            
-            // Dados estáticos de exemplo (MOCK) caso os estudantes não configurem a API de imediato
-            if (apiKey === 'SUA_API_KEY_AQUI') {
-                document.getElementById('w-cidade').innerText = cidade + " (Modo Demo)";
-                document.getElementById('w-temp').innerText = "24";
-                document.getElementById('w-condicao').innerText = "Parcialmente Nublado";
-                document.getElementById('w-umidade').innerText = "65";
-                return;
-            }
+    </section>
 
-            // Código real que roda quando colocarem a API Key
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade},BR&units=metric&lang=pt_br&appid=${apiKey}`;
-            
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Cidade não encontrada');
-                const data = await response.json();
-                
-                document.getElementById('w-cidade').innerText = data.name;
-                document.getElementById('w-temp').innerText = Math.round(data.main.temp);
-                document.getElementById('w-condicao').innerText = data.weather[0].description;
-                document.getElementById('w-umidade').innerText = data.main.humidity;
-            } catch (error) {
-                alert('Erro ao buscar clima. Verifique o nome da cidade ou a chave da API.');
-            }
-        }
-
-        // Executa a busca inicial ao carregar a página
-        window.onload = buscarClima;
-    </script>
-</body>
-</html>
+</div>
