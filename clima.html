@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroInfo - Clima</title>
+
+<style>
+:root{
+    --primary:#2e7d32;
+    --secondary:#f57c00;
+    --bg:#f4f6f4;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:var(--bg);
+}
+
+header{
+    background:var(--primary);
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+input{
+    width:70%;
+    padding:10px;
+}
+
+button{
+    padding:10px 20px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.weather{
+    margin-top:20px;
+    background:#e8f5e9;
+    padding:20px;
+}
+
+footer{
+    margin-top:40px;
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌦️ Previsão do Tempo</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<p>Digite uma cidade:</p>
+<br>
+
+<input id="cidade" value="Patrocínio">
+<button onclick="buscarClima()">Buscar</button>
+
+<div class="weather">
+<h3 id="cidadeNome">Patrocínio</h3>
+<p><strong>Temperatura:</strong> <span id="temp">24</span>°C</p>
+<p><strong>Condição:</strong> <span id="condicao">Parcialmente Nublado</span></p>
+<p><strong>Umidade:</strong> <span id="umidade">65</span>%</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+AgroInfo © 2026
+</footer>
+
+<script>
+function buscarClima(){
+    let cidade = document.getElementById("cidade").value;
+
+    document.getElementById("cidadeNome").innerText = cidade;
+    document.getElementById("temp").innerText = Math.floor(Math.random()*10)+20;
+    document.getElementById("condicao").innerText = "Ensolarado";
+    document.getElementById("umidade").innerText = Math.floor(Math.random()*30)+50;
+}
+</script>
+
+</body>
+</html>
